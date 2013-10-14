@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.eclipsecon.conference/src-gen" editDirectory="/org.eclipse.eclipsecon.conference.edit/src"
+    editorDirectory="/org.eclipse.eclipsecon.conference.editor/src" modelPluginID="org.eclipse.eclipsecon.conference"
+    forceOverwrite="true" modelName="Conference" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.eclipse.eclipsecon.conference.edit"
+    editorPluginID="org.eclipse.eclipsecon.conference.editor" runtimeVersion="2.10"
+    usedGenPackages="../../../org.eclipse.eclipsecon.location/model/generated/Location.genmodel#//location ../../../org.eclipse.eclipsecon.speaker/model/generated/Speaker.genmodel#//speaker">
+  <genPackages prefix="Conference" basePackage="org.eclipse.eclipsecon" disposableProviderFactory="true"
+      fileExtensions="conference" ecorePackage="Conference.ecore#/">
+    <genClasses ecoreClass="Conference.ecore#//Conference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Conference.ecore#//Conference/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Conference.ecore#//Conference/imports"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Conference.ecore#//Conference/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Conference.ecore#//Conference/talks"/>
+    </genClasses>
+    <genClasses ecoreClass="Conference.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Conference.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="Conference.ecore#//Talk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Conference.ecore#//Talk/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Conference.ecore#//Talk/speakers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Conference.ecore#//Talk/room"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Conference.ecore#//Talk/tools"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

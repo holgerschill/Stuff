@@ -1,0 +1,5 @@
+package locations.us
+location Boston {
+	room Ballroom1 
+	tool Beamer
+}

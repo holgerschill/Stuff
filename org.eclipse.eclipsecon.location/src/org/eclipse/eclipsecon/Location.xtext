@@ -1,0 +1,32 @@
+grammar org.eclipse.eclipsecon.Location with org.eclipse.xtext.common.Terminals
+
+generate location "http://www.eclipse.org/eclipsecon/Location"
+
+Package:
+	'package' name=FQN
+	locations+=Location*
+;
+
+Location:
+	'location' name=ID '{'
+		elements+=LocationElement*
+		
+	'}'
+;
+
+LocationElement:
+	Room | Tool
+;
+
+Room:
+	'room' name=ID
+;
+
+Tool:
+	'tool' name=ID
+;
+
+
+FQN:
+	ID ('.' ID)*
+;

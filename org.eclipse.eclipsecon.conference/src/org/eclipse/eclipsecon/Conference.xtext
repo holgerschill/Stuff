@@ -1,0 +1,33 @@
+grammar org.eclipse.eclipsecon.Conference with org.eclipse.xtext.common.Terminals
+
+generate conference "http://www.eclipse.org/eclipsecon/Conference"
+import "http://www.eclipse.org/eclipsecon/Location"
+import "http://www.eclipse.org/eclipsecon/Speaker"
+
+Conference:
+	'conference' name=ID '{'
+		imports+=Import*
+		location=[Location | FQN]
+		talks+=Talk*
+	'}'
+;
+
+Import:
+	'import' importedNamespace=FQNWithWildcard
+;
+
+Talk:
+	'talk' name=ID '{'	
+		'speaker' speakers+=[Speaker | FQN] (',' speakers+=[Speaker | FQN])* 
+		'room' room=[Room | FQN] 
+		'tools' tools+=[Tool | FQN] (',' tools+=[Tool | FQN])*
+	'}'
+;
+
+FQN:
+	ID ('.' ID)*
+;
+
+FQNWithWildcard:
+	FQN ('.*')?
+;

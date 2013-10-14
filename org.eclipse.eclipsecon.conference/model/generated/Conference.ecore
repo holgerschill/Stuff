@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="conference" nsURI="http://www.eclipse.org/eclipsecon/Conference"
+    nsPrefix="conference">
+  <eClassifiers xsi:type="ecore:EClass" name="Conference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//Import" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="ecore:EClass ../../../org.eclipse.eclipsecon.location/model/generated/Location.ecore#//Location"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="talks" upperBound="-1"
+        eType="#//Talk" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Talk">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="speakers" unique="false"
+        upperBound="-1" eType="ecore:EClass ../../../org.eclipse.eclipsecon.speaker/model/generated/Speaker.ecore#//Speaker"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" eType="ecore:EClass ../../../org.eclipse.eclipsecon.location/model/generated/Location.ecore#//Room"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tools" unique="false" upperBound="-1"
+        eType="ecore:EClass ../../../org.eclipse.eclipsecon.location/model/generated/Location.ecore#//Tool"/>
+  </eClassifiers>
+</ecore:EPackage>

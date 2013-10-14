@@ -1,0 +1,13 @@
+conference EclipseConEurope {
+	
+	import locations.europe.*
+	import speakers.germany.*
+	
+	Ludwigsburg
+	
+	talk Xtext {
+		speaker Holger, Moritz
+		room Theater
+		tools Beamer
+	}
+}

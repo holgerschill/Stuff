@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.eclipse.eclipsecon</groupId>
+  <artifactId>maven-languages</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>maven-languages</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+		<tycho-version>0.17.0</tycho-version>
+		<I2S-url>/Users/schill/Documents/Conferences/What_you_get_for_free_with_Xtext/ws/org.eclipse.eclipsecon.updatesite/</I2S-url>
+		<tycho-version>0.17.0</tycho-version>
+		<mirroring.phase>prepare-package</mirroring.phase>
+		<skipMirroring>false</skipMirroring>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-p2-extras-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<phase>${mirroring.phase}</phase>
+						<goals>
+							<goal>mirror</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<destination>${project.build.directory}/dependencies-mvn</destination>
+					<followStrictOnly>true</followStrictOnly>
+					<includeOptional>false</includeOptional>
+					<includeNonGreedy>false</includeNonGreedy>
+					<latestVersionOnly>false</latestVersionOnly>
+					<mirrorMetadataOnly>false</mirrorMetadataOnly>
+					<compress>true</compress>
+					<append>false</append>
+					<includePacked>false</includePacked>
+					<source>
+						<!-- source repositories to mirror from -->
+						<repository>
+							<id>i2s</id>
+							<layout>p2</layout>
+							<url>${I2S-url}</url>
+						</repository>
+					</source>
+					<ius>
+						<iu>
+							<id>org.eclipse.eclipsecon.conference</id>
+						</iu>
+						<iu>
+							<id>org.eclipse.eclipsecon.location</id>
+						</iu>
+						<iu>
+							<id>org.eclipse.eclipsecon.speaker</id>
+						</iu>
+					</ius>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>prepare</id>
+						<phase>prepare-package</phase>
+						<configuration>
+							<target>
+								<echo message="Prepare jar content:" />
+								<ant antfile="${basedir}/create-uberjar.ant" target="run"
+									dir="${basedir}">
+									<property name="maven.version" value="${project.version}" />
+									<property name="binJarTemp" value="${project.build.outputDirectory}" />
+									<property name="sourceJarTemp"
+										value="${project.build.directory}/sourcesJarTemp" />
+								</ant>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.xtext</groupId>
+			<artifactId>org.eclipse.xtext.standalone</artifactId>
+			<version>2.5.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>

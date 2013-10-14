@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.eclipsecon.conference
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.eclipse.eclipsecon.conference; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.eclipsecon.location;bundle-version="1.0.0",
+ org.eclipse.eclipsecon.speaker;bundle-version="1.0.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.eclipse.eclipsecon,
+ org.eclipse.eclipsecon.services,
+ org.eclipse.eclipsecon.conference,
+ org.eclipse.eclipsecon.conference.impl,
+ org.eclipse.eclipsecon.conference.util,
+ org.eclipse.eclipsecon.serializer,
+ org.eclipse.eclipsecon.parser.antlr,
+ org.eclipse.eclipsecon.parser.antlr.internal,
+ org.eclipse.eclipsecon.validation,
+ org.eclipse.eclipsecon.scoping,
+ org.eclipse.eclipsecon.generator,
+ org.eclipse.eclipsecon.formatting

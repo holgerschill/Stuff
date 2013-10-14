@@ -1,0 +1,15 @@
+grammar org.eclipse.eclipsecon.Speaker with org.eclipse.xtext.common.Terminals
+
+generate speaker "http://www.eclipse.org/eclipsecon/Speaker"
+
+Package:
+	'package' name=FQN
+	speakers+=Speaker*;
+	
+Speaker:
+	'speaker' name=ID
+;
+
+FQN:
+	ID ('.' ID)*
+;

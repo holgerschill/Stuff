@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.eclipsecon.feature_1.0.0.201310141510.jar" id="org.eclipse.eclipsecon.feature" version="1.0.0.201310141510"/>
+</site>
