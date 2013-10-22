@@ -56,6 +56,9 @@
 						<language>
 							<setup>org.eclipse.eclipsecon.SpeakerStandaloneSetup</setup>
 						</language>
+						<language>
+							<setup>org.eclipse.xtext.example.domainmodel.DomainmodelStandaloneSetup</setup>
+						</language>
 					</languages>
 				</configuration>
 				<dependencies>
@@ -76,4 +79,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.xtext</groupId>
+			<artifactId>org.eclipse.xtext.xbase.lib</artifactId>
+			<version>2.5.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>

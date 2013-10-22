@@ -12,7 +12,7 @@
 
   <properties>
 		<tycho-version>0.17.0</tycho-version>
-		<I2S-url>/Users/schill/Documents/Conferences/What_you_get_for_free_with_Xtext/ws/org.eclipse.eclipsecon.updatesite/</I2S-url>
+		<updatesite-url>../org.eclipse.eclipsecon.updatesite/</updatesite-url>
 		<tycho-version>0.17.0</tycho-version>
 		<mirroring.phase>prepare-package</mirroring.phase>
 		<skipMirroring>false</skipMirroring>
@@ -46,7 +46,7 @@
 						<repository>
 							<id>i2s</id>
 							<layout>p2</layout>
-							<url>${I2S-url}</url>
+							<url>${updatesite-url}</url>
 						</repository>
 					</source>
 					<ius>
@@ -58,6 +58,9 @@
 						</iu>
 						<iu>
 							<id>org.eclipse.eclipsecon.speaker</id>
+						</iu>
+						<iu>
+							<id>org.eclipse.xtext.example.domainmodel</id>
 						</iu>
 					</ius>
 				</configuration>

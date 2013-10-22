@@ -1,0 +1,47 @@
+grammar org.eclipse.eclipsecon.scoping.Scoping with org.eclipse.xtext.common.Terminals
+
+generate scoping "http://www.eclipse.org/eclipsecon/scoping/Scoping"
+
+Model:
+	('importURI' importURI=STRING)?
+	packages+=Package*;
+
+Package:
+	'package' name=FQN
+	imports+=Import*
+	element+=Element*;
+
+Import:
+	'import' importedNamespace=FQNWithWildcard;
+
+Element:
+	'element' name=ID ('refs' ref=[Element | FQN])?;
+	
+FQN:
+	ID ('.' ID)*;
+	
+FQNWithWildcard:
+	FQN (".*")?;
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

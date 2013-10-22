@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.eclipsecon.scoping/src-gen" editDirectory="/org.eclipse.eclipsecon.scoping.edit/src"
+    editorDirectory="/org.eclipse.eclipsecon.scoping.editor/src" modelPluginID="org.eclipse.eclipsecon.scoping"
+    forceOverwrite="true" modelName="Scoping" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.eclipse.eclipsecon.scoping.edit"
+    editorPluginID="org.eclipse.eclipsecon.scoping.editor" runtimeVersion="2.10">
+  <genPackages prefix="Scoping" basePackage="org.eclipse.eclipsecon.scoping" disposableProviderFactory="true"
+      fileExtensions="scope" ecorePackage="Scoping.ecore#/">
+    <genClasses ecoreClass="Scoping.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scoping.ecore#//Model/importURI"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scoping.ecore#//Model/packages"/>
+    </genClasses>
+    <genClasses ecoreClass="Scoping.ecore#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scoping.ecore#//Package/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scoping.ecore#//Package/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scoping.ecore#//Package/element"/>
+    </genClasses>
+    <genClasses ecoreClass="Scoping.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scoping.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="Scoping.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scoping.ecore#//Element/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scoping.ecore#//Element/ref"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

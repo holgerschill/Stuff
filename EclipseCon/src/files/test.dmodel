@@ -1,0 +1,4 @@
+
+package org.eclipsecon {
+	entity Person { }
+}
