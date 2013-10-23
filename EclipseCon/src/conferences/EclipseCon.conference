@@ -8,6 +8,6 @@ conference EclipseConEurope {
 	talk Xtext {
 		speaker Holger, Moritz
 		room Theater
-		tools Beamer
+		tools Projector
 	}
 }

@@ -1,5 +1,5 @@
 package locations.europe
 location Ludwigsburg {
 	room Theater 
-	tool Beamer
+	tool Projector
 }
