@@ -1,0 +1,17 @@
+import java.util.Calendar
+
+entity Person {
+
+	firstname : String
+	lastname : String	
+	yearOfBirth : int
+	
+	op fullName() {
+		firstname + " " + lastname
+	}
+	
+	op age() {
+		Calendar.instance.get(Calendar.YEAR) - yearOfBirth
+	}
+	
+}
