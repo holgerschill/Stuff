@@ -5,7 +5,8 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
-grammar org.eclipse.xtext.example.domainmodel.Domainmodel with org.eclipse.xtext.xbase.Xtype
+grammar org.eclipse.xtext.example.domainmodel.Domainmodel 
+	with org.eclipse.xtext.xbase.Xtype
 
 import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
 
@@ -14,7 +15,7 @@ generate domainmodel "http://www.xtext.org/example/Domainmodel"
 // (...)
 	
 Entity:
-	'entity' name=ValidID ('extends' superType=JvmParameterizedTypeReference)? '{'
+	'entity' name=ValidID ('extends' superType=JvmTypeReference)? '{'
 		features+=Feature*
 	'}';
 	
